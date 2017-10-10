@@ -1,0 +1,9 @@
+---
+- hosts: all
+  vars:
+     packages: [ 'vim', 'git', 'curl' ]
+  tasks:
+    - name: Check if PHP is installed
+      register: php_installed
+      command: php -v
+      ignore_errors: true
